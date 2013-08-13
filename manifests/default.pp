@@ -17,6 +17,7 @@ class { 'apache' :
 
 class { 'mysql' :
 	password => "root",
+	database => "db_project",
 }
 
 class { 'php' : }

@@ -1,4 +1,4 @@
-class mysql ($password = "") {
+class mysql ($password = "", $database = "") {
 	package { 'mysql-server' :
 		ensure  => 'present',
 		require => Exec["apt-get update"],
@@ -13,6 +13,7 @@ class mysql ($password = "") {
 			Exec['mysql-changepassword'],
 			Exec['mysql-remoteaccess'],
 			Exec['mysql-grantpermissions'],
+			Exec['mysql-createdatabase'],
 		],
 	}
 
@@ -32,6 +33,14 @@ class mysql ($password = "") {
 		require => [
 			Package["mysql-server"],
 			File["file-mysql-grantpermissions"],
+		],
+	}
+
+	exec { 'mysql-createdatabase' :
+		command => "mysql -uroot -p${password} -e \"CREATE DATABASE ${database};\"",
+		require => [
+			Package["mysql-server"],
+			Exec["mysql-changepassword"],
 		],
 	}
 
