@@ -19,5 +19,4 @@ class { 'mysql' :
 	password => "root",
 }
 
-class { 'php' :
-}
+class { 'php' : }
