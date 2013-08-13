@@ -1,3 +1,4 @@
 .DS_Store
 modules/mysql/files/enable-remote-access.sql
 .vagrant/
+project/*

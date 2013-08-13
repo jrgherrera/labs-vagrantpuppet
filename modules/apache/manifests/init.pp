@@ -11,6 +11,7 @@ class apache ($servername = "") {
 		require    => Package["apache2"],
 		subscribe  => [
 			File['apache-virtualhosts'],
+			File['apache-modrewrite'],
 			Exec['apache-servername'],
 		],
 	}
@@ -18,6 +19,13 @@ class apache ($servername = "") {
 	file { 'apache-virtualhosts' :
 		path    => '/etc/apache2/sites-enabled/000-default',
 		source  => '/vagrant/modules/apache/files/apache-virtualhosts',
+		require => Package['apache2'],
+	}
+
+	file { 'apache-modrewrite' :
+		path    => '/etc/apache2/mods-enabled/rewrite.load',
+		ensure	=> 'link',
+		target  => '/etc/apache2/mods-available/rewrite.load',
 		require => Package['apache2'],
 	}
 
