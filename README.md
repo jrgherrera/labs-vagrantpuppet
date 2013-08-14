@@ -14,6 +14,7 @@ This is the base configuration of the project, using Vagrant + Puppet.
 
 Create a directory on the place that you want, and locate with the __Terminal__ application on it:
 
+	mkdir new-directory/
     cd new-directory/
 
 Clone the entire project.
