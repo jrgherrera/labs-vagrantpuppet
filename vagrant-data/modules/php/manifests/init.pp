@@ -19,7 +19,12 @@ class php {
 
 	file { 'php-phpinfo' :
 		path    => '/var/www/info.php',
-		source  => '/vagrant/modules/php/files/info.php',
+		source  => '/vagrant/vagrant-data/modules/php/files/info.php',
 		require => Package['php5'],
 	}
+
+    notify { "PHP installation: Done!" : 
+    	loglevel => 'info',
+    	require  => Package["php5"],
+    }
 }

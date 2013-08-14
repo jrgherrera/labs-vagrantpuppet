@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network :private_network, ip: "33.33.33.33"
+  config.vm.network :private_network, ip: "192.168.100.100"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -74,9 +74,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # # }
   #
   config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "manifests"
+    puppet.manifests_path = "vagrant-data/manifests"
     puppet.manifest_file  = "default.pp"
-    puppet.module_path    = "modules"
+    puppet.module_path    = "vagrant-data/modules"
     puppet.options        = "--verbose"
   end
 

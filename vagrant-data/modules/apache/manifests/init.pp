@@ -18,7 +18,7 @@ class apache ($servername = "") {
 
 	file { 'apache-virtualhosts' :
 		path    => '/etc/apache2/sites-enabled/000-default',
-		source  => '/vagrant/modules/apache/files/apache-virtualhosts',
+		source  => '/vagrant/vagrant-data/modules/apache/files/apache-virtualhosts',
 		require => Package['apache2'],
 	}
 
@@ -33,4 +33,9 @@ class apache ($servername = "") {
 		command => "echo \"ServerName ${servername}\" | sudo tee /etc/apache2/conf.d/fqdn",
 		require => Package["apache2"],
 	}
+
+    notify { "Apache installation: Done!" : 
+    	loglevel => 'info',
+    	require  => Service["apache2"],
+    }
 }
