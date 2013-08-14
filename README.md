@@ -10,7 +10,18 @@ This is the base configuration of the project, using Vagrant + Puppet.
 
 * Download and Install [Vagrant](http://downloads.vagrantup.com/).
 
+* Download and Install [Vagrant Hostupdater](https://github.com/cogitatio/vagrant-hostsupdater).
+
 ## Installation
+
+To install Vagrant Hostmaster just open __Terminal__ application and type:
+
+    vagrant plugin install vagrant-hostsupdater
+
+You can edit the IP value and the Host name, just open __Vagrantfile__ and look the following lines:
+
+    config.vm.network :private_network, ip: "192.168.100.100"
+    config.vm.hostname = "labs-vagrantpuppet.dev"
 
 Create a directory on the place that you want, and locate with the __Terminal__ application on it:
 
