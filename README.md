@@ -39,19 +39,11 @@ Start vagrant:
 
     vagrant up
 
-If you want to create an alias, just open your _/etc/hosts_ file and add a new entry.
-
-    192.168.100.100    project.dev
-
 ## Notes
-
-If you don't know what is the IP, just open the file _Vagrantfile_ and locate the line
-
-      config.vm.network :private_network, ip: "192.168.100.100"
-
-If you want to restore an existing database dump, just place the .sql file on __vagrant-data/modules/mysql/files/__ with the name __backup.sql__.
 
 You can edit the IP value and the Host name, just open __Vagrantfile__ and edit the following lines:
 
     config.vm.network :private_network, ip: "192.168.100.100"
     config.vm.hostname = "labs-vagrantpuppet.dev"
+
+If you want to restore an existing database dump, just place the .sql file on __vagrant-data/modules/mysql/files/__ with the name __backup.sql__.
