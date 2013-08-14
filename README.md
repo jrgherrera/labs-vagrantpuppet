@@ -37,6 +37,10 @@ If you want to create an alias, just open your _/etc/hosts_ file and add a new e
 
     192.168.100.100    project.dev
 
-__Note:__ If you don't know what is the IP, just open the file _Vagrantfile_ and locate the line
+## Notes
+
+If you don't know what is the IP, just open the file _Vagrantfile_ and locate the line
 
       config.vm.network :private_network, ip: "192.168.100.100"
+
+If you want to restore an existing database dump, just place the .sql file on __vagrant-data/modules/mysql/files/__ with the name __backup.sql__.
