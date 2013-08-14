@@ -16,4 +16,10 @@ class php {
 		ensure  => 'present',
 		require => Exec["apt-get update"],
 	}
+
+	file { 'php-phpinfo' :
+		path    => '/var/www/info.php',
+		source  => '/vagrant/modules/php/files/info.php',
+		require => Package['php5'],
+	}
 }
