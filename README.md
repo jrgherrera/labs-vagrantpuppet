@@ -18,7 +18,7 @@ To install Vagrant Hostmaster just open __Terminal__ application and type:
 
     vagrant plugin install vagrant-hostsupdater
 
-You can edit the IP value and the Host name, just open __Vagrantfile__ and look the following lines:
+You can edit the IP value and the Host name, just open __Vagrantfile__ and edit the following lines:
 
     config.vm.network :private_network, ip: "192.168.100.100"
     config.vm.hostname = "labs-vagrantpuppet.dev"
