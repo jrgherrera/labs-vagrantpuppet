@@ -10,7 +10,7 @@ This is the base configuration of the project, using Vagrant + Puppet.
 
 * Download and Install [Vagrant](http://downloads.vagrantup.com/).
 
-## INSTALLATION
+## Installation
 
 Create a directory on the place that you want, and locate with the __Terminal__ application on it:
 
