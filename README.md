@@ -20,10 +20,11 @@ Clone the entire project.
 
     git clone --recursive git://github.com/hangarcr/PROJECT-NAME.git .
 
-If you are Tech Leader just clone this repository and put the files on _"project"_ directory, and delete the file "delete-this-file"
+If you are Tech Leader just clone this repository and put the files on _"project"_ directory, delete the file "delete-this-file" and delete all __.git__ directories to start a new repository.
 
     git clone --recursive git@github.com:hangarcr/labs-vagrantpuppet.git .
     rm project/delete-this-file
+    find . -type f | grep -i .git | xargs rm
 
 Locate the file called _Vagrantfile_ and make sure that you are at the same level.
 
