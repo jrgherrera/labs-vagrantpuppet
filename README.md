@@ -25,7 +25,7 @@ If you are Tech Leader just clone this repository and put the files on _"project
 
     git clone --recursive git@github.com:hangarcr/labs-vagrantpuppet.git .
     rm project/delete-this-file
-    find . -type f | grep -i .git | xargs rm
+    rm -rf .git
 
 Locate the file called _Vagrantfile_ and make sure that you are at the same level.
 
