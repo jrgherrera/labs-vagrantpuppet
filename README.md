@@ -18,11 +18,6 @@ To install Vagrant Hostmaster just open __Terminal__ application and type:
 
     vagrant plugin install vagrant-hostsupdater
 
-You can edit the IP value and the Host name, just open __Vagrantfile__ and edit the following lines:
-
-    config.vm.network :private_network, ip: "192.168.100.100"
-    config.vm.hostname = "labs-vagrantpuppet.dev"
-
 Create a directory on the place that you want, and locate with the __Terminal__ application on it:
 
 	mkdir new-directory/
@@ -55,3 +50,8 @@ If you don't know what is the IP, just open the file _Vagrantfile_ and locate th
       config.vm.network :private_network, ip: "192.168.100.100"
 
 If you want to restore an existing database dump, just place the .sql file on __vagrant-data/modules/mysql/files/__ with the name __backup.sql__.
+
+You can edit the IP value and the Host name, just open __Vagrantfile__ and edit the following lines:
+
+    config.vm.network :private_network, ip: "192.168.100.100"
+    config.vm.hostname = "labs-vagrantpuppet.dev"
