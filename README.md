@@ -18,20 +18,28 @@ To install Vagrant Hostmaster just open __Terminal__ application and type:
 
     vagrant plugin install vagrant-hostsupdater
 
+Give full permission to your __/etc/hosts__ file:
+
+    sudo chmod 777 /etc/hosts
+
 Create a directory on the place that you want, and locate with the __Terminal__ application on it:
 
 	mkdir new-directory/
     cd new-directory/
 
-Clone the entire project.
+### For Tech Leaders
 
-    git clone --recursive git://github.com/hangarcr/PROJECT-NAME.git .
-
-If you are Tech Leader just clone this repository and put the files on _"project"_ directory, delete the file "delete-this-file" and delete all __.git__ directories to start a new repository.
+Clone this repository and put the files on _"project"_ directory, delete the file "delete-this-file" and delete all __.git__ directories to start a new repository.
 
     git clone --recursive git@github.com:hangarcr/labs-vagrantpuppet.git .
     rm project/delete-this-file
     rm -rf .git
+
+### For Developers
+
+Clone the entire project.
+
+    git clone --recursive git://github.com/hangarcr/PROJECT-NAME.git .
 
 Locate the file called _Vagrantfile_ and make sure that you are at the same level.
 
