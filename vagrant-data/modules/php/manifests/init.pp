@@ -24,7 +24,7 @@ class php {
 	}
 
     notify { "PHP installation: Done!" : 
-    	loglevel => 'info',
+    	loglevel => 'notice',
     	require  => Package["php5"],
     }
 }

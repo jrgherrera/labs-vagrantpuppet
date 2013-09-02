@@ -60,7 +60,7 @@ class mysql ($user = "root", $password = "", $database = "") {
 	}
 
     notify { "MySQL installation: Done!" : 
-    	loglevel => 'info',
+    	loglevel => 'notice',
     	require  => Service["mysql"],
     }
 }

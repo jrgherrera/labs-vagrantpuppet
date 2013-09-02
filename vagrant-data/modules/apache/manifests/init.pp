@@ -35,7 +35,7 @@ class apache ($servername = "") {
 	}
 
     notify { "Apache installation: Done!" : 
-    	loglevel => 'info',
+    	loglevel => 'notice',
     	require  => Service["apache2"],
     }
 }

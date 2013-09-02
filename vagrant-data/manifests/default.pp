@@ -22,3 +22,5 @@ class { 'mysql' :
 }
 
 class { 'php' : }
+	
+class { 'sendmail' : }
