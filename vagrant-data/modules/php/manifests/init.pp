@@ -9,6 +9,7 @@ class php {
 		"php5-mcrypt",
 		"php5-mysql",
 		"php5-uuid",
+		"php-pear",
 		"libapache2-mod-php5",
 	]
 
