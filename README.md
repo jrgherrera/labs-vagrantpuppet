@@ -2,7 +2,7 @@
 
 This is the base configuration of the project, using Vagrant + Puppet.
 
-Vagrant version: Vagrant 1.3.3
+Vagrant version: 1.3.3
 
 ## Requirements:
 
