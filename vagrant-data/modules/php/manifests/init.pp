@@ -1,6 +1,7 @@
 class php {
 	$packages = [
 		"php5",
+        # "php5-apcu",
 		"php5-cli",
 		"php5-curl",
 		"php5-dev",
@@ -17,6 +18,11 @@ class php {
 		ensure  => 'present',
 		require => Exec["apt-get update"],
 	}
+
+	# exec { 'enable-rfc1867':
+	# 	command => 'echo "apc.rfc1867 = 1" | sudo tee /etc/php5/mods-available/apcu.ini',
+	# 	require => Package['php5'],
+	# }
 
 	file { 'php-phpinfo' :
 		path    => '/var/www/info.php',
