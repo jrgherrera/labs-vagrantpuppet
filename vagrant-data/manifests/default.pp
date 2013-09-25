@@ -2,14 +2,6 @@ Exec {
   path => ["/usr/bin", "/bin", "/usr/sbin", "/sbin", "/usr/local/bin", "/usr/local/sbin"]
 }
 
-exec { 'apt-get update':
-	command   => '/usr/bin/apt-cache search dude',
-	subscribe => [
-		Exec["nameserver"],
-		Exec["timezone"],
-	],
-}
-
 exec { 'nameserver':
 	command => 'echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null'
 }
@@ -18,16 +10,34 @@ exec { 'timezone':
 	command => 'echo "America/Chicago" | sudo tee /etc/timezone'
 }
 
+exec { 'apt-get update':
+	command   => 'apt-get update',
+	logoutput => true,
+	require   => [
+		Exec["nameserver"],
+		Exec["timezone"],
+	],
+}
+
+package { 'python-software-properties' :
+	ensure  => 'present',
+	require => Exec["apt-get update"],
+}
+
+
+
+class { 'php' : 
+	# Add this repo to have PHP 5.4
+	repository => "ppa:ondrej/php5",
+}
+
 class { 'apache' :
 	servername => "localhost",
 }
 
 class { 'mysql' :
-	user     => "root",
 	password => "root",
 	database => "db_project",
 }
-
-class { 'php' : }
 	
 class { 'sendmail' : }
