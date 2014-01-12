@@ -34,7 +34,6 @@ Create a directory on the place that you want, and locate with the __Terminal__ 
 Clone this repository and put the files on _"project"_ directory, delete the file "delete-this-file" and delete all __.git__ directories to start a new repository.
 
     git clone --recursive git@github.com:hangarcr/labs-vagrantpuppet.git .
-    rm project/delete-this-file
     rm -rf .git
 
 ### For Developers
