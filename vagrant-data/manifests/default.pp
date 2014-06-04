@@ -41,3 +41,9 @@ class { 'mysql' :
 }
 	
 class { 'sendmail' : }
+
+# class { 'nodejs' : 
+# 	repository => "ppa:chris-lea/node.js",
+# }
+
+class { 'git' : }
