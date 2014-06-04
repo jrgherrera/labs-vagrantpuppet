@@ -2,7 +2,7 @@
 
 This is the base configuration of the project, using Vagrant + Puppet.
 
-Vagrant version: 1.3.3
+Vagrant version: 1.4.3
 
 ## Requirements:
 
@@ -10,7 +10,7 @@ Vagrant version: 1.3.3
 
 * Download their Extension Pack [at the same link](https://www.virtualbox.org/wiki/Downloads).
 
-* Download and Install [Vagrant](http://downloads.vagrantup.com/).
+* Download and Install [Vagrant](http://www.vagrantup.com/downloads.html).
 
 * Download and Install [Vagrant Hostupdater](https://github.com/cogitatio/vagrant-hostsupdater).
 
@@ -34,7 +34,6 @@ Create a directory on the place that you want, and locate with the __Terminal__ 
 Clone this repository and put the files on _"project"_ directory, delete the file "delete-this-file" and delete all __.git__ directories to start a new repository.
 
     git clone --recursive git@github.com:hangarcr/labs-vagrantpuppet.git .
-    rm project/delete-this-file
     rm -rf .git
 
 ### For Developers
