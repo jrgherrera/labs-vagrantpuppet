@@ -2,7 +2,7 @@
 
 This is the base configuration of the project, using Vagrant + Puppet.
 
-Vagrant version: 1.4.3
+Vagrant version: 1.6.3
 
 ## Requirements:
 
@@ -26,21 +26,15 @@ Give full permission to your __/etc/hosts__ file:
 
 Create a directory on the place that you want, and locate with the __Terminal__ application on it:
 
-	mkdir new-directory/
+    mkdir new-directory/
     cd new-directory/
 
-### For Tech Leaders
+### New project
 
 Clone this repository and put the files on _"project"_ directory, delete the file "delete-this-file" and delete all __.git__ directories to start a new repository.
 
-    git clone --recursive git@github.com:hangarcr/labs-vagrantpuppet.git .
+    git clone --recursive https://github.com/hangarcr/labs-vagrantpuppet .
     rm -rf .git
-
-### For Developers
-
-Clone the entire project.
-
-    git clone --recursive git://github.com/hangarcr/PROJECT-NAME.git .
 
 Locate the file called _Vagrantfile_ and make sure that you are at the same level.
 
@@ -52,7 +46,7 @@ Start vagrant:
 
 You can edit the IP value and the Host name, just open __Vagrantfile__ and edit the following lines:
 
-    config.vm.network :private_network, ip: "192.168.100.100"
+    config.vm.network :private_network, ip: "192.168.10.11"
     config.vm.hostname = "labs-vagrantpuppet.dev"
 
 If you want to restore an existing database dump, just place the .sql file on __vagrant-data/modules/mysql/files/__ with the name __backup.sql__.
